@@ -18,8 +18,8 @@
         <module>core</module>
     </modules>
     <scm>
-        <connection>scm:git:git://github.com/fuzzitdev/javafuzz.git</connection>
-        <developerConnection>scm:git:ssh://git@github.com:fuzzitdev/javafuzz.git</developerConnection>
+        <connection>scm:git:git@github.com:fuzzitdev/javafuzz.git</connection>
+<!--        <developerConnection>scm:git:ssh://git@github.com:fuzzitdev/javafuzz.git</developerConnection>-->
         <url>https://github.com/fuzzitdev/javafuzz</url>
     </scm>
     <distributionManagement>
