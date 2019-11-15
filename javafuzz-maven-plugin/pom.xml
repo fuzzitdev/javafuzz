@@ -1,7 +1,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>org.fuzzitdev.javafuzz</groupId>
+  <groupId>dev.fuzzit.javafuzz</groupId>
   <artifactId>javafuzz-maven-plugin</artifactId>
   <packaging>maven-plugin</packaging>
   <version>1.0-SNAPSHOT</version>
@@ -36,21 +36,11 @@
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>org.fuzzitdev.javafuzz</groupId>
+      <groupId>dev.fuzzit.javafuzz</groupId>
       <artifactId>core</artifactId>
       <version>1.0-SNAPSHOT</version>
       <scope>compile</scope>
     </dependency>
-<!--      <dependency>-->
-<!--          <groupId>org.jacoco</groupId>-->
-<!--          <artifactId>jacoco-maven-plugin</artifactId>-->
-<!--          <version>0.8.4</version>-->
-<!--      </dependency>-->
-<!--    <dependency>-->
-<!--      <groupId>org.jacoco</groupId>-->
-<!--      <artifactId>org.jacoco.core</artifactId>-->
-<!--      <version>0.8.4</version>-->
-<!--    </dependency>-->
   </dependencies>
   <build>
     <plugins>
@@ -65,4 +55,15 @@
       <!-- other plugins -->
     </plugins>
   </build>
+
+  <distributionManagement>
+    <snapshotRepository>
+      <id>ossrh</id>
+      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+    </snapshotRepository>
+    <repository>
+      <id>ossrh</id>
+      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+    </repository>
+  </distributionManagement>
 </project>

@@ -8,12 +8,11 @@ import org.apache.maven.plugins.annotations.Mojo;
 import org.apache.maven.plugins.annotations.Parameter;
 import org.apache.maven.plugins.annotations.ResolutionScope;
 import org.apache.maven.project.MavenProject;
-import org.fuzzitdev.javafuzz.core.AbstractFuzzTarget;
-import org.fuzzitdev.javafuzz.core.Fuzzer;
+import dev.fuzzit.javafuzz.core.AbstractFuzzTarget;
+import dev.fuzzit.javafuzz.core.Fuzzer;
 
 import java.io.File;
 import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLClassLoader;

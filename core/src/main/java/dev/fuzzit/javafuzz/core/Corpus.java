@@ -1,4 +1,4 @@
-package org.fuzzitdev.javafuzz.core;
+package dev.fuzzit.javafuzz.core;
 
 import com.sun.tools.javac.util.StringUtils;
 

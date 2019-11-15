@@ -1,4 +1,4 @@
-package org.fuzzitdev.javafuzz.examples;
+package dev.fuzzit.javafuzz.examples;
 
 /**
  * Hello world!
