@@ -1,7 +1,5 @@
 package dev.fuzzit.javafuzz.core;
 
-import com.sun.tools.javac.util.StringUtils;
-
 import java.io.File;
 import java.io.IOException;
 import java.nio.Buffer;
