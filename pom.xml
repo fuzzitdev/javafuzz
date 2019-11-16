@@ -6,6 +6,15 @@
     <description>Javafuzz - Coverage Guided Fuzzing for Java</description>
     <url>https://github.com/fuzzitdev/javafuzz</url>
 
+    <profiles>
+        <profile>
+            <id>disable-doc</id>
+            <properties>
+                <javadoc.opts>-Xdoclint:none</javadoc.opts>
+            </properties>
+        </profile>
+    </profiles>
+
     <groupId>dev.fuzzit.javafuzz</groupId>
     <artifactId>javafuzz</artifactId>
     <packaging>pom</packaging>
@@ -21,6 +30,7 @@
         <url>https://github.com/fuzzitdev/javafuzz</url>
       <tag>HEAD</tag>
   </scm>
+
     <distributionManagement>
         <snapshotRepository>
             <id>ossrh</id>
