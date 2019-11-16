@@ -3,7 +3,7 @@
   <groupId>dev.fuzzit.javafuzz</groupId>
   <artifactId>javafuzz-maven-plugin</artifactId>
   <packaging>maven-plugin</packaging>
-  <version>1.1</version>
+  <version>1.2-SNAPSHOT</version>
   <name>javafuzz-maven-plugin Maven Mojo</name>
   <url>https://fuzzit.dev</url>
   <properties>
@@ -37,7 +37,7 @@
     <dependency>
       <groupId>dev.fuzzit.javafuzz</groupId>
       <artifactId>core</artifactId>
-      <version>1.1</version>
+      <version>1.2-SNAPSHOT</version>
       <scope>compile</scope>
     </dependency>
   </dependencies>
