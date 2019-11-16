@@ -5,7 +5,7 @@
 
   <groupId>dev.fuzzit.javafuzz</groupId>
   <artifactId>core</artifactId>
-  <version>1.2-SNAPSHOT</version>
+  <version>1.2</version>
 
   <name>core</name>
   <!-- FIXME change it to the project's website -->
