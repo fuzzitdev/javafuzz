@@ -36,7 +36,7 @@
     <groupId>dev.fuzzit.javafuzz</groupId>
     <artifactId>javafuzz</artifactId>
     <packaging>pom</packaging>
-    <version>1.9</version>
+    <version>1.10-SNAPSHOT</version>
     <modules>
         <module>javafuzz-maven-plugin</module>
         <module>examples</module>
@@ -46,7 +46,7 @@
         <connection>scm:git:git@github.com:fuzzitdev/javafuzz.git</connection>
 <!--        <developerConnection>scm:git:ssh://git@github.com:fuzzitdev/javafuzz.git</developerConnection>-->
         <url>https://github.com/fuzzitdev/javafuzz</url>
-      <tag>javafuzz-1.9</tag>
+      <tag>HEAD</tag>
   </scm>
 
     <distributionManagement>
