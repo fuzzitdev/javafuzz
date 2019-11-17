@@ -5,17 +5,14 @@
 
   <groupId>dev.fuzzit.javafuzz</groupId>
   <artifactId>core</artifactId>
-  <version>1.8-SNAPSHOT</version>
 
   <name>core</name>
-  <!-- FIXME change it to the project's website -->
-  <url>http://www.example.com</url>
 
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>1.7</maven.compiler.source>
-    <maven.compiler.target>1.7</maven.compiler.target>
-  </properties>
+  <parent>
+    <groupId>dev.fuzzit.javafuzz</groupId>
+    <artifactId>javafuzz</artifactId>
+    <version>1.8-SNAPSHOT</version>
+  </parent>
 
   <dependencies>
     <dependency>
