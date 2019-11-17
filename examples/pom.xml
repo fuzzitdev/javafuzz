@@ -5,7 +5,7 @@
 
   <groupId>dev.fuzzit.javafuzz</groupId>
   <artifactId>examples</artifactId>
-  <version>1.6-SNAPSHOT</version>
+  <version>1.6</version>
 
   <name>examples</name>
   <!-- FIXME change it to the project's website -->
@@ -27,7 +27,7 @@
     <dependency>
       <groupId>dev.fuzzit.javafuzz</groupId>
       <artifactId>core</artifactId>
-      <version>1.6-SNAPSHOT</version>
+      <version>1.6</version>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -83,7 +83,7 @@
         <plugin>
           <groupId>dev.fuzzit.javafuzz</groupId>
           <artifactId>javafuzz-maven-plugin</artifactId>
-          <version>1.6-SNAPSHOT</version>
+          <version>1.6</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
