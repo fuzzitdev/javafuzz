@@ -5,6 +5,13 @@
     <name>javafuzz</name>
     <description>Javafuzz - Coverage Guided Fuzzing for Java</description>
     <url>https://github.com/fuzzitdev/javafuzz</url>
+    <developers>
+        <developer>
+            <name>Yevgeny Pats</name>
+            <email>yp@fuzzit.dev</email>
+            <url>https://fuzzit.dev</url>
+        </developer>
+    </developers>
     <licenses>
         <license>
             <name>Apache License, Version 2.0</name>
