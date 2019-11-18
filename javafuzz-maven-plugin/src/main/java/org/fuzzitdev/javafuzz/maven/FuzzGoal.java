@@ -58,7 +58,7 @@ public class FuzzGoal extends AbstractMojo
 // need to define parent classloader which knows all dependencies of the plugin
             URLClassLoader classLoader = new URLClassLoader(urlsForClassLoader, FuzzGoal.class.getClassLoader());
             AbstractFuzzTarget fuzzTarget =
-                    (AbstractFuzzTarget) classLoader.loadClass(className).newInstance();
+                    (AbstractFuzzTarget) classLoader.loadClass(className).getDeclaredConstructor().newInstance();
             Fuzzer fuzzer = new Fuzzer(fuzzTarget);
             fuzzer.start();
         } catch (InstantiationException | IllegalAccessException | MalformedURLException | DependencyResolutionRequiredException
