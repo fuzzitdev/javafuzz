@@ -11,7 +11,7 @@
   <parent>
     <groupId>dev.fuzzit.javafuzz</groupId>
     <artifactId>javafuzz</artifactId>
-    <version>1.18</version>
+    <version>1.19-SNAPSHOT</version>
   </parent>
 
   <dependencies>
