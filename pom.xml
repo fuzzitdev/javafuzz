@@ -28,7 +28,7 @@
     <groupId>dev.fuzzit.javafuzz</groupId>
     <artifactId>javafuzz</artifactId>
     <packaging>pom</packaging>
-    <version>1.14-SNAPSHOT</version>
+    <version>1.14</version>
     <modules>
         <module>javafuzz-maven-plugin</module>
         <module>examples</module>
@@ -38,7 +38,7 @@
         <connection>scm:git:git@github.com:fuzzitdev/javafuzz.git</connection>
 <!--        <developerConnection>scm:git:ssh://git@github.com:fuzzitdev/javafuzz.git</developerConnection>-->
         <url>https://github.com/fuzzitdev/javafuzz</url>
-      <tag>javafuzz-1.12</tag>
+      <tag>javafuzz-1.14</tag>
   </scm>
 
     <distributionManagement>
