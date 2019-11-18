@@ -11,7 +11,7 @@
   <parent>
     <groupId>dev.fuzzit.javafuzz</groupId>
     <artifactId>javafuzz</artifactId>
-    <version>1.11</version>
+    <version>1.12-SNAPSHOT</version>
   </parent>
 
   <dependencies>
@@ -24,7 +24,7 @@
     <dependency>
       <groupId>dev.fuzzit.javafuzz</groupId>
       <artifactId>core</artifactId>
-      <version>1.11</version>
+      <version>1.12-SNAPSHOT</version>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -80,7 +80,7 @@
         <plugin>
           <groupId>dev.fuzzit.javafuzz</groupId>
           <artifactId>javafuzz-maven-plugin</artifactId>
-          <version>1.11</version>
+          <version>1.12-SNAPSHOT</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
