@@ -8,7 +8,7 @@
   <parent>
     <groupId>dev.fuzzit.javafuzz</groupId>
     <artifactId>javafuzz</artifactId>
-    <version>1.15</version>
+    <version>1.16-SNAPSHOT</version>
   </parent>
   <properties>
     <maven.compiler.source>1.7</maven.compiler.source>
