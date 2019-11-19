@@ -39,10 +39,38 @@ the result/bug the function should throw an exception.
 or hangs/they run more the the specified timeout limit per testcase.
 
 ### Installing
+Add this to your `pom.xml`
+
+```yaml
+  <dependencies>
+    <dependency>
+      <groupId>dev.fuzzit.javafuzz</groupId>
+      <artifactId>core</artifactId>
+      <version>1.23-SNAPSHOT</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+<plugin>
+        <plugin>
+          <groupId>dev.fuzzit.javafuzz</groupId>
+          <artifactId>javafuzz-maven-plugin</artifactId>
+          <version>1.22</version>
+        </plugin>
+</plugins>
+```
+
 
 ### Running
 
-The next step is to download js-fuzz and then run your fuzzer
+The next step is to javafuzz with your fuzz target function
+
+
+```bash
+wget -O jacocoagent https://github.com/fuzzitdev/javafuzz/raw/master/javafuzz-maven-plugin/src/main/resources/jacocoagent-exp.jar
+MAVEN_OPTIONS="-javaagent:jacoco.jar" mvn javafuzz:fuzz -DclassName=your.full.class.name
+```
+
 
 ```bash
 

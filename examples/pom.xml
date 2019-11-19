@@ -80,7 +80,7 @@
         <plugin>
           <groupId>dev.fuzzit.javafuzz</groupId>
           <artifactId>javafuzz-maven-plugin</artifactId>
-          <version>1.12</version>
+          <version>1.23-SNAPSHOT</version>
         </plugin>
       </plugins>
     </pluginManagement>
