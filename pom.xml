@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <name>javafuzz</name>
+    <description>Javafuzz - Coverage Guided Fuzzing for Java</description>
+    <url>https://github.com/fuzzitdev/javafuzz</url>
+    <developers>
+        <developer>
+            <name>Yevgeny Pats</name>
+            <email>yp@fuzzit.dev</email>
+            <url>https://fuzzit.dev</url>
+        </developer>
+    </developers>
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+            <comments>A business-friendly OSS license</comments>
+        </license>
+    </licenses>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.7</maven.compiler.source>
+        <maven.compiler.target>1.7</maven.compiler.target>
+    </properties>
+    <groupId>dev.fuzzit.javafuzz</groupId>
+    <artifactId>javafuzz</artifactId>
+    <packaging>pom</packaging>
+    <version>1.23-SNAPSHOT</version>
+    <modules>
+        <module>javafuzz-maven-plugin</module>
+        <module>core</module>
+        <module>examples</module>
+    </modules>
+    <scm>
+        <connection>scm:git:git@github.com:fuzzitdev/javafuzz.git</connection>
+<!--        <developerConnection>scm:git:ssh://git@github.com:fuzzitdev/javafuzz.git</developerConnection>-->
+        <url>https://github.com/fuzzitdev/javafuzz</url>
+      <tag>javafuzz-1.12</tag>
+  </scm>
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+    </distributionManagement>
+
+    <profiles>
+        <profile>
+            <id>release-profile</id>
+    <build>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-gpg-plugin</artifactId>
+                    <version>1.5</version>
+                    <executions>
+                        <execution>
+                            <id>sign-artifacts</id>
+                            <phase>verify</phase>
+                            <goals>
+                                <goal>sign</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
+                    <groupId>org.sonatype.plugins</groupId>
+                    <artifactId>nexus-staging-maven-plugin</artifactId>
+                    <version>1.6.7</version>
+                    <extensions>true</extensions>
+                    <configuration>
+                        <serverId>ossrh</serverId>
+                        <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+                        <autoReleaseAfterClose>true</autoReleaseAfterClose>
+                    </configuration>
+                </plugin>
+            </plugins>
+    </build>
+        </profile>
+    </profiles>
+</project>
