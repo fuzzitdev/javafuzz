@@ -12,6 +12,7 @@
     <groupId>dev.fuzzit.javafuzz</groupId>
     <artifactId>javafuzz</artifactId>
     <version>1.21-SNAPSHOT</version>
+    <relativePath>../pom.xml</relativePath>
   </parent>
 
   <dependencies>
@@ -24,14 +25,13 @@
     <dependency>
       <groupId>dev.fuzzit.javafuzz</groupId>
       <artifactId>core</artifactId>
-      <version>1.12</version>
+      <version>1.21-SNAPSHOT</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.yaml</groupId>
       <artifactId>snakeyaml</artifactId>
       <version>1.25</version>
-      <!--      <version>1.26-SNAPSHO</version>-->
     </dependency>
   </dependencies>
 

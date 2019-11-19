@@ -1,10 +1,15 @@
 package dev.fuzzit.javafuzz.core;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.math.BigInteger;
 import java.nio.Buffer;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -17,9 +22,12 @@ public class Corpus {
     private final int[] INTERESTING8 = {-128, -1, 0, 1, 16, 32, 64, 100, 127};
     private final int[] INTERESTING16 = {-32768, -129, 128, 255, 256, 512, 1000, 1024, 4096, 32767, -128, -1, 0, 1, 16, 32, 64, 100, 127};
     private final int[] INTERESTING32 = {-2147483648, -100663046, -32769, 32768, 65535, 65536, 100663045, 2147483647, -32768, -129, 128, 255, 256, 512, 1000, 1024, 4096, 32767, -128, -1, 0, 1, 16, 32, 64, 100, 127};
+    private String corpusPath;
+    private int seedLength;
 
     Corpus(String dirs) {
         this.maxInputSize = 4096;
+        this.corpusPath = null;
         this.inputs = new ArrayList<>();
         if (dirs != null) {
             String[] arr = dirs.split(",");
@@ -29,6 +37,9 @@ public class Corpus {
                     f.mkdirs();
                 }
                 if (f.isDirectory()) {
+                    if (this.corpusPath == null) {
+                        this.corpusPath = f.getPath();
+                    }
                     this.loadDir(f);
                 } else {
                     try {
@@ -39,6 +50,7 @@ public class Corpus {
                 }
             }
         }
+        this.seedLength = this.inputs.size();
     }
 
     int getLength() {
@@ -64,7 +76,11 @@ public class Corpus {
         }
     }
 
-    public byte[] generateInput() {
+    public byte[] generateInput() throws NoSuchAlgorithmException {
+        if (this.seedLength != 0) {
+            this.seedLength--;
+            return this.inputs.get(this.seedLength);
+        }
         if (this.inputs.size() == 0) {
             byte[] buf = new byte[]{};
             this.putBuffer(buf);
@@ -74,8 +90,21 @@ public class Corpus {
         return this.mutate(buf);
     }
 
-    public void putBuffer(byte[] buf) {
+    public void putBuffer(byte[] buf) throws NoSuchAlgorithmException {
         this.inputs.add(buf);
+        if (this.corpusPath != null) {
+            MessageDigest md = MessageDigest.getInstance("SHA-256");
+            md.update(buf);
+            byte[] digest = md.digest();
+            String hex = String.format("%064x", new BigInteger(1, digest));
+            try (FileOutputStream fos = new FileOutputStream(this.corpusPath + "/" + hex)) {
+                fos.write(buf);
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     private String dec2bin(int dec) {

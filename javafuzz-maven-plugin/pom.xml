@@ -9,6 +9,7 @@
     <groupId>dev.fuzzit.javafuzz</groupId>
     <artifactId>javafuzz</artifactId>
     <version>1.21-SNAPSHOT</version>
+    <relativePath>../pom.xml</relativePath>
   </parent>
   <properties>
     <maven.compiler.source>1.7</maven.compiler.source>
@@ -41,17 +42,12 @@
     <dependency>
       <groupId>dev.fuzzit.javafuzz</groupId>
       <artifactId>core</artifactId>
-      <version>1.12</version>
+      <version>1.21-SNAPSHOT</version>
       <scope>compile</scope>
     </dependency>
   </dependencies>
   <build>
     <plugins>
-<!--      <plugin>-->
-<!--        <groupId>org.apache.maven.plugins</groupId>-->
-<!--        <artifactId>maven-javadoc-plugin</artifactId>-->
-<!--        <version>2.10.4</version>-->
-<!--      </plugin>-->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-plugin-plugin</artifactId>

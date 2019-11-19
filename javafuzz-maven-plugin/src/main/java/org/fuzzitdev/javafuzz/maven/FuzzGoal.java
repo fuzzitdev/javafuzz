@@ -41,8 +41,8 @@ public class FuzzGoal extends AbstractMojo
     @Parameter( property = "rssLimitMb", required = false)
     private String rssLimitMb;
 
-    @Parameter( property = "timeout", required = false)
-    private String timeout;
+//    @Parameter( property = "timeout", required = false)
+//    private String timeout;
 
     public void execute()
     {
@@ -59,7 +59,7 @@ public class FuzzGoal extends AbstractMojo
             URLClassLoader classLoader = new URLClassLoader(urlsForClassLoader, FuzzGoal.class.getClassLoader());
             AbstractFuzzTarget fuzzTarget =
                     (AbstractFuzzTarget) classLoader.loadClass(className).getDeclaredConstructor().newInstance();
-            Fuzzer fuzzer = new Fuzzer(fuzzTarget);
+            Fuzzer fuzzer = new Fuzzer(fuzzTarget, this.dirs);
             fuzzer.start();
         } catch (InstantiationException | IllegalAccessException | MalformedURLException | DependencyResolutionRequiredException
                 | ClassNotFoundException | NoSuchMethodException | InvocationTargetException | NoSuchAlgorithmException e) {

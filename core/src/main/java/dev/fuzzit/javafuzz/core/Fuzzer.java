@@ -19,9 +19,9 @@ public class Fuzzer {
     private long totalExecutions;
     private long totalCoverage;
 
-    public Fuzzer(AbstractFuzzTarget target) throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+    public Fuzzer(AbstractFuzzTarget target, String dirs) throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException, IllegalAccessException {
         this.target = target;
-        this.corpus = new Corpus(null);
+        this.corpus = new Corpus(dirs);
         Class c = Class.forName("org.jacoco.agent.rt.RT");
         Method m = c.getMethod("getAgent");
         this.agent = m.invoke(null);
@@ -67,6 +67,7 @@ public class Fuzzer {
 
         while (true) {
             byte[] buf = this.corpus.generateInput();
+            // Next version will run this in a different thread.
             try {
                 this.target.fuzz(buf);
             } catch (Exception e) {
@@ -74,6 +75,7 @@ public class Fuzzer {
                 this.writeCrash(buf);
                 break;
             }
+
             this.totalExecutions++;
             this.executionsInSample++;
 

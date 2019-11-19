@@ -31,8 +31,8 @@
     <version>1.21-SNAPSHOT</version>
     <modules>
         <module>javafuzz-maven-plugin</module>
-        <module>examples</module>
         <module>core</module>
+        <module>examples</module>
     </modules>
     <scm>
         <connection>scm:git:git@github.com:fuzzitdev/javafuzz.git</connection>
@@ -52,6 +52,9 @@
         </repository>
     </distributionManagement>
 
+    <profiles>
+        <profile>
+            <id>release-profile</id>
     <build>
             <plugins>
                 <plugin>
@@ -81,4 +84,6 @@
                 </plugin>
             </plugins>
     </build>
+        </profile>
+    </profiles>
 </project>
