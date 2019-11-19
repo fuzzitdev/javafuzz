@@ -11,7 +11,7 @@
   <parent>
     <groupId>dev.fuzzit.javafuzz</groupId>
     <artifactId>javafuzz</artifactId>
-    <version>1.21</version>
+    <version>1.22-SNAPSHOT</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
@@ -25,7 +25,7 @@
     <dependency>
       <groupId>dev.fuzzit.javafuzz</groupId>
       <artifactId>core</artifactId>
-      <version>1.21</version>
+      <version>1.22-SNAPSHOT</version>
       <scope>test</scope>
     </dependency>
     <dependency>
