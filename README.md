@@ -67,8 +67,13 @@ The next step is to javafuzz with your fuzz target function
 
 
 ```bash
+docker run -it maven:3.6.2-jdk-11 /bin/bash
+git clone https://github.com/fuzzitdev/javafuzz.git
+cd javafuzz
+mvn install
+cd examples
 wget -O jacocoagent.jar https://github.com/fuzzitdev/javafuzz/raw/master/javafuzz-maven-plugin/src/main/resources/jacocoagent-exp.jar
-MAVEN_OPTIONS="-javaagent:jacoco.jar" mvn javafuzz:fuzz -DclassName=your.full.class.name
+MAVEN_OPTS="-javaagent:jacocoagent.jar" mvn javafuzz:fuzz -DclassName=dev.fuzzit.javafuzz.examples.FuzzYaml
 ```
 
 
@@ -90,11 +95,6 @@ MAVEN_OPTIONS="-javaagent:jacoco.jar" mvn javafuzz:fuzz -DclassName=your.full.cl
 #97857 PULSE     cov: 108 corp: 9 exec/s: 225 rss: 129.96 MB
 #97857 PULSE     cov: 108 corp: 9 exec/s: 0 rss: 940.97 MB
 #97857 PULSE     cov: 108 corp: 9 exec/s: 0 rss: 1566.01 MB
-#97857 PULSE     cov: 108 corp: 9 exec/s: 0 rss: 2053.49 MB
-MEMORY OOM: exceeded 2048 MB. Killing worker
-Worker killed
-crash was written to crash-819587841e3c275338593b0d195b6163d5208866870e2abf3be8cfc781d2688d
-crash(hex)=ffd8ffc09dfdb0ffff0e5296bd7fbbc4f9579096bd7fbbfc0e80d50000ffff36fa400100236701bf73ffaf8003a57f097f5e000000008023c4f9579096bd7fbb008000001500b34e8c018fda5212
 ```
 
 This example quickly finds an infinite hang which takes all the memory in `jpeg-js`.
