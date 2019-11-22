@@ -67,7 +67,7 @@ The next step is to javafuzz with your fuzz target function
 
 
 ```bash
-wget -O jacocoagent https://github.com/fuzzitdev/javafuzz/raw/master/javafuzz-maven-plugin/src/main/resources/jacocoagent-exp.jar
+wget -O jacocoagent.jar https://github.com/fuzzitdev/javafuzz/raw/master/javafuzz-maven-plugin/src/main/resources/jacocoagent-exp.jar
 MAVEN_OPTIONS="-javaagent:jacoco.jar" mvn javafuzz:fuzz -DclassName=your.full.class.name
 ```
 
