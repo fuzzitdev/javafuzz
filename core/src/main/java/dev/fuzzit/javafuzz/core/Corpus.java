@@ -319,10 +319,10 @@ public class Corpus {
                 }
             } else if (x == 13) {
                 // Replace an ascii digit with another digit.
-                List<Byte> digits = new ArrayList<Byte>();
+                List<Integer> digits = new ArrayList<Integer>();
                 for (int k=0; k<res.length; k++) {
                     if (res[k] >= 48 && res[k] <= 57) {
-                        digits.add((byte)k);
+                        digits.add(k);
                     }
                 }
                 if (digits.size() == 0) {
