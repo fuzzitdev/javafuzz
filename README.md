@@ -1,3 +1,5 @@
+fuzzit.dev was [acquired](https://about.gitlab.com/press/releases/2020-06-11-gitlab-acquires-peach-tech-and-fuzzit-to-expand-devsecops-offering.html) by GitLab and the new home for this repo is [here](https://gitlab.com/gitlab-org/security-products/analyzers/fuzzers/javafuzz)
+
 # Javafuzz: coverage-guided fuzz testing for Java
 
 Javafuzz is coverage-guided [fuzzer](https://developer.mozilla.org/en-US/docs/Glossary/Fuzzing) 
